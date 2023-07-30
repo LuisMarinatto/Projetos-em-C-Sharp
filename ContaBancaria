@@ -1,0 +1,157 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Projeto
+{
+    internal class Program //inicio do programa
+    {
+        enum Opcao { Saldo = 1, Pix = 2, Fatura = 3, Sair = 0 }
+        static void Main(string[] args)//função principal
+        {
+
+            User();
+
+            Console.ReadLine();
+        }
+
+        static void User()
+        {
+            string nome, cpf, Sair, senha;
+            double Pix, Saldo = 2000.37, PagarFatura = 800.21, saldoFinal;
+            Console.WriteLine("Informe o seu nome");
+            nome = Console.ReadLine();
+            //Console.WriteLine("Bem-vindo " + nome);
+            Console.WriteLine("Digite seu CPF");
+            cpf = Console.ReadLine();
+            Console.WriteLine("Digite sua Senha");
+            senha = Console.ReadLine();
+            if (senha == "senha")
+            {
+                Console.WriteLine("Bem-vindo " + nome);
+                Console.WriteLine("Digite 1 para ver o saldo\ndigite 2 para ir ao pix\ndigite 3 para pagar a fatura do cartão\ndigite 0 para sair");
+
+                int index = int.Parse(Console.ReadLine());
+                Opcao opcaoSelect = (Opcao)index;
+                Console.WriteLine(opcaoSelect);
+                switch (opcaoSelect)
+                {
+                    case Opcao.Saldo:
+                        Console.WriteLine("o seu saldo é R$: " + Saldo);
+                        break;
+                    case Opcao.Pix:
+                        Console.WriteLine("Insira o destinatário");
+                        nome = Console.ReadLine();
+                        Console.WriteLine("Insira o valor");
+                        Pix = double.Parse(Console.ReadLine());
+                        saldoFinal = Saldo - Pix;
+                        Console.WriteLine("Seu saldo atual é: " + saldoFinal);
+                        break;
+                    case Opcao.Fatura:
+                        Console.WriteLine("A fatura do seu cartão é R$: 800.21");
+                        saldoFinal = Saldo - PagarFatura;
+                        Console.WriteLine("O seu saldo é R$: " + saldoFinal);
+                        break;
+                    case Opcao.Sair:
+                        Console.WriteLine("até a próxima");
+                        break;
+                    default:
+                        Console.WriteLine("Opção invalida");
+                        break;
+
+                }
+            }
+            else if (senha != "senha")
+            {
+                Console.WriteLine("Uma ou todas as informações estão incorretas, tente novamente");
+                Console.WriteLine("Digite sua Senha");
+                senha = Console.ReadLine();
+                if (senha == "senha")
+                {
+
+                    Console.WriteLine("Bem-vindo " + nome);
+                    Console.WriteLine("Digite 1 para ver o saldo\ndigite 2 para ir ao pix\ndigite 3 para pagar a fatura do cartão\ndigite 0 para sair");
+
+                    int index = int.Parse(Console.ReadLine());
+                    Opcao opcaoSelect = (Opcao)index;
+                    Console.WriteLine(opcaoSelect);
+                    switch (opcaoSelect)
+                    {
+                        case Opcao.Saldo:
+                            Console.WriteLine("o seu saldo é R$: " + Saldo);
+                            break;
+                        case Opcao.Pix:
+                            Console.WriteLine("Insira o destinatário");
+                            nome = Console.ReadLine();
+                            Console.WriteLine("Insira o valor");
+                            Pix = double.Parse(Console.ReadLine());
+                            saldoFinal = Saldo - Pix;
+                            Console.WriteLine("Seu saldo atual é: " + saldoFinal);
+                            break;
+                        case Opcao.Fatura:
+                            Console.WriteLine("A fatura do seu cartão é R$: 800.21");
+                            saldoFinal = Saldo - PagarFatura;
+                            Console.WriteLine("O seu saldo é R$: " + saldoFinal);
+                            break;
+                        case Opcao.Sair:
+                            Console.WriteLine("até a próxima");
+                            break;
+                        default:
+                            Console.WriteLine("Opção invalida");
+                            break;
+                    }
+                }
+                else if (senha != "senha")
+                {
+                    Console.WriteLine("Sua conta será bloqueada caso erre novamente");
+                    Console.WriteLine("Digite sua Senha");
+                    senha = Console.ReadLine();
+                    if (senha == "senha")
+                    {
+                        Console.WriteLine("Bem-vindo " + nome);
+                        Console.WriteLine("Digite 1 para ver o saldo\ndigite 2 para ir ao pix\ndigite 3 para pagar a fatura do cartão\ndigite 0 para sair");
+
+                        int index = int.Parse(Console.ReadLine());
+                        Opcao opcaoSelect = (Opcao)index;
+                        Console.WriteLine(opcaoSelect);
+                        switch (opcaoSelect)
+                        {
+                            case Opcao.Saldo:
+                                Console.WriteLine("o seu saldo é R$: " + Saldo);
+                                break;
+                            case Opcao.Pix:
+                                Console.WriteLine("Insira o destinatário");
+                                nome = Console.ReadLine();
+                                Console.WriteLine("Insira o valor");
+                                Pix = double.Parse(Console.ReadLine());
+                                saldoFinal = Saldo - Pix;
+                                Console.WriteLine("Seu saldo atual é: " + saldoFinal);
+                                break;
+                            case Opcao.Fatura:
+                                Console.WriteLine("A fatura do seu cartão é R$: 800.21");
+                                saldoFinal = Saldo - PagarFatura;
+                                Console.WriteLine("O seu saldo é R$: " + saldoFinal);
+                                break;
+                            case Opcao.Sair:
+                                Console.WriteLine("até a próxima");
+                                break;
+                            default:
+                                Console.WriteLine("Opção invalida");
+                                break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("sua conta foi bloqueada");
+                }
+
+                Console.ReadLine();
+            }
+        } //fim do programa
+    }
+}

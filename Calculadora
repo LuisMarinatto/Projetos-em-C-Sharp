@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Projeto
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1, num2, total;
+            Console.WriteLine("insira o primeiro numero");
+            num1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("insira o operador");
+            string operador = Console.ReadLine();
+            Console.WriteLine("insira o segundo numero");
+            num2 = double.Parse(Console.ReadLine());
+            if (operador == "+")
+            {
+                total = num1 + num2;
+                Console.WriteLine("o resultado é: " + total);
+            }
+            else if (operador == "-")
+            {
+                total = num1 - num2;
+                Console.WriteLine("o resultado é: " + total);
+            }
+            else if (operador == "*")
+            {
+                total = num1 * num2;
+                Console.WriteLine("o resultado é: " + total);
+            }
+           else
+            {
+                total = num1 / num2;
+                Console.WriteLine("o resultado é: " + total);
+            }
+            
+            Console.ReadLine();
+        }
+
+    }
+
+}

@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Projeto
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            User();
+
+            Console.ReadLine();
+        }
+        static void User()
+        {
+            Console.WriteLine("informe seu nome");
+            string nome = Console.ReadLine();
+            Console.WriteLine("informe seu e-mail");
+            string mail = Console.ReadLine();
+            Console.WriteLine("informe seu telefone");
+            string tel = Console.ReadLine();
+            Console.WriteLine("informe seu RG");
+            string rg = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.;
+            Console.WriteLine(string.Format("bem vindo {0}, portador do RG {1}, confirme o link enviado no e-mail {2} ou pelo whatsapp {3}",nome, rg, mail, tel));
+        }
+
+
+    }
+
+}

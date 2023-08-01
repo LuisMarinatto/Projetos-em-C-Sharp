@@ -51,8 +51,10 @@ namespace Projeto
                         Console.WriteLine("Seu saldo atual é: " + saldoFinal);
                         break;
                     case Opcao.Fatura:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("A fatura do seu cartão é R$: 800.21");
                         saldoFinal = Saldo - PagarFatura;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("O seu saldo é R$: " + saldoFinal);
                         break;
                     case Opcao.Sair:
@@ -66,7 +68,9 @@ namespace Projeto
             }
             else if (senha != "senha")
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Uma ou todas as informações estão incorretas, tente novamente");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("Digite sua Senha");
                 senha = Console.ReadLine();
                 if (senha == "senha")
@@ -92,8 +96,10 @@ namespace Projeto
                             Console.WriteLine("Seu saldo atual é: " + saldoFinal);
                             break;
                         case Opcao.Fatura:
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("A fatura do seu cartão é R$: 800.21");
                             saldoFinal = Saldo - PagarFatura;
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             Console.WriteLine("O seu saldo é R$: " + saldoFinal);
                             break;
                         case Opcao.Sair:
@@ -106,7 +112,9 @@ namespace Projeto
                 }
                 else if (senha != "senha")
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Sua conta será bloqueada caso erre novamente");
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("Digite sua Senha");
                     senha = Console.ReadLine();
                     if (senha == "senha")
@@ -144,11 +152,13 @@ namespace Projeto
                         }
                     }
 
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("sua conta foi bloqueada");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("sua conta foi bloqueada");
-                }
+                        
 
                 Console.ReadLine();
             }
